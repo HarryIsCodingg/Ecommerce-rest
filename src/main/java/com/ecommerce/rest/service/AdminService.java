@@ -12,9 +12,12 @@ public class AdminService {
 
     private AdminRepository adminRepository;
 
-    public boolean validateAdminLogin(Credentials credentials){
+    public Admin validateAdminLogin(Credentials credentials){
         Admin foundUser = adminRepository.findByCredentials_Username(credentials.getUsername());
 
-        return foundUser != null && foundUser.getCredentials().getPassword().equals(credentials.getPassword());
+        if(foundUser != null && foundUser.getCredentials().getPassword().equals(credentials.getPassword())){
+            return foundUser;
+        }
+        return null;
     }
 }

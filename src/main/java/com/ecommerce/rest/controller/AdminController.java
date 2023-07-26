@@ -1,5 +1,6 @@
 package com.ecommerce.rest.controller;
 
+import com.ecommerce.rest.model.Admin;
 import com.ecommerce.rest.model.Credentials;
 import com.ecommerce.rest.service.AdminService;
 import lombok.AllArgsConstructor;
@@ -14,7 +15,7 @@ public class AdminController {
     private AdminService adminService;
 
     @PostMapping("login")
-    public boolean loginValidation(@RequestBody Credentials credentials){
+    public Admin loginValidation(@RequestBody Credentials credentials){
         return adminService.validateAdminLogin(credentials);
     }
 }
