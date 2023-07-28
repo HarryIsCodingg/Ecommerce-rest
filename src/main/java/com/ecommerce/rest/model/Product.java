@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Product {
 
     private String name;
-    private String price;
     private String quantity;
     private String category;
+    private String pricePerPound;
 }
