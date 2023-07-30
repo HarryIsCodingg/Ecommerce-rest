@@ -1,10 +1,13 @@
 package com.ecommerce.rest.controller;
 
 import com.ecommerce.rest.model.Credentials;
+import com.ecommerce.rest.model.Product;
 import com.ecommerce.rest.model.User;
 import com.ecommerce.rest.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -17,5 +20,10 @@ public class UserController {
     @PostMapping("login")
     public User loginValidation(@RequestBody Credentials credentials){
         return userService.validateUserLogin(credentials);
+    }
+
+    @PostMapping("suggestions")
+    public List<Product> getAllSuggestions(@RequestBody List<String> userProductNames){
+        return userService.getProductsByUserUsername(userProductNames);
     }
 }

@@ -12,4 +12,5 @@ public class User {
     private Credentials credentials;
     private boolean hasCustomBasket;
     private List<Product> productList;
+    private int coupons;
 }
