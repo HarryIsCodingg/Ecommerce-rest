@@ -12,4 +12,6 @@ public interface ProductRepository extends MongoRepository<Product, String> {
 
     List<Product> findByNameIn(List<String> productNames);
     List<Product> findByCategoryInAndNameNotIn(Set<String> userCategories, List<String> userProductNames);
+    Product deleteProductByName(String productName);
+    Product findByName(String name);
 }

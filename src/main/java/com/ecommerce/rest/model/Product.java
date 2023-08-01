@@ -10,5 +10,7 @@ public class Product {
     private String name;
     private String quantity;
     private String category;
+    private String imageUrl;
     private String pricePerPound;
+
 }

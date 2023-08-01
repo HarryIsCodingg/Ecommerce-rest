@@ -18,6 +18,6 @@ public class AdminService {
         if(foundUser != null && foundUser.getCredentials().getPassword().equals(credentials.getPassword())){
             return foundUser;
         }
-        return null;
+        return new Admin();
     }
 }
