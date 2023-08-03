@@ -32,8 +32,8 @@ public class CategoryServiceTest {
 
     @Test
     public void testGetAllCategories() {
-        Category category1 = new Category("fruit"); // Add your own initialization data
-        Category category2 = new Category("vegetable"); // Add your own initialization data
+        Category category1 = new Category("fruit");
+        Category category2 = new Category("vegetable");
 
         List<Category> categories = Arrays.asList(category1, category2);
 
@@ -52,7 +52,7 @@ public class CategoryServiceTest {
 
     @Test
     public void testAddCategory() {
-        Category category = new Category("dairy"); // Add your own initialization data
+        Category category = new Category("dairy");
 
         when(categoryRepository.save(category)).thenReturn(category);
 
@@ -67,9 +67,9 @@ public class CategoryServiceTest {
 
     @Test
     public void testDeleteCategory() {
-        String name = "categoryName";
-        Category category1 = new Category("poultry"); // Add your own initialization data
-        Category category2 = new Category("beef"); // Add your own initialization data
+        String name = "poultry";
+        Category category1 = new Category(name);
+        Category category2 = new Category("beef");
         List<Category> categories = Arrays.asList(category1, category2);
 
         when(categoryRepository.findAll()).thenReturn(categories);
