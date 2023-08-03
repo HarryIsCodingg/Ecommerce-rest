@@ -65,11 +65,11 @@ public class ProductServiceTest {
 
     @Test
     public void testDeleteProduct() {
-        String productName = "productName";
+        String productName = "havarti cheese";
         Product product = new Product(); // Add your own initialization data
 
         // Initialization Data
-        product.setName("havarti cheese");
+        product.setName(productName);
         product.setCategory("dairy");
         product.setImageUrl("havarti.png");
         product.setQuantity("10");
@@ -113,11 +113,11 @@ public class ProductServiceTest {
 
     @Test
     public void testUpdateProduct() {
-        String productToUpdate = "productToUpdate";
+        String productToUpdate = "kobe";
         Product updatedProduct = new Product(); // Add your own initialization data
 
         // Initialization Data
-        updatedProduct.setName("kobe");
+        updatedProduct.setName(productToUpdate);
         updatedProduct.setCategory("beef");
         updatedProduct.setImageUrl("kobe.png");
         updatedProduct.setQuantity("10");

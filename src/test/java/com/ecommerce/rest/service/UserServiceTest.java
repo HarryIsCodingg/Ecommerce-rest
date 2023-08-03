@@ -15,6 +15,7 @@ import org.mockito.MockitoAnnotations;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -82,6 +83,33 @@ public class UserServiceTest {
         // Assuming a new User() has null or default values for all its properties
         assertNull(result.getCredentials());
         // ... Add assertions for other properties of User
+    }
+
+    @Test
+    public void testUpdateCoupons() {
+        String username = "amitatest";
+        int coupons = 5;
+        User user = new User(); // add your initialization data
+
+        // Initialization Data
+        Credentials credentials = new Credentials();
+        credentials.setUsername(username);
+        credentials.setPassword("dixit");
+
+        user.setCoupons(coupons);
+        user.setCredentials(credentials);
+        user.setProductList(null);
+        user.setHasCustomBasket(false);
+        // Initialization Data
+
+        when(userRepository.findByCredentials_Username(username)).thenReturn(user);
+        when(userRepository.save(any(User.class))).thenReturn(user);
+
+        boolean result = userService.updateCoupons(coupons, username);
+
+        System.out.println("It is "+result+" that "+username+"'s coupons have been updated.");
+
+        assertTrue(result);
     }
 
 }

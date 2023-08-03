@@ -67,8 +67,8 @@ public class CategoryServiceTest {
 
     @Test
     public void testDeleteCategory() {
-        String name = "categoryName";
-        Category category1 = new Category("poultry"); // Add your own initialization data
+        String name = "poultry";
+        Category category1 = new Category(name); // Add your own initialization data
         Category category2 = new Category("beef"); // Add your own initialization data
         List<Category> categories = Arrays.asList(category1, category2);
 
