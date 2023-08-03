@@ -26,4 +26,9 @@ public class UserController {
     public List<Product> getAllSuggestions(@RequestBody List<String> userProductNames){
         return userService.getProductsByUserUsername(userProductNames);
     }
+
+    @PostMapping("coupons/update")
+    public boolean updateCoupons(@RequestParam int coupons, String username ){
+        return userService.updateCoupons(coupons, username);
+    }
 }

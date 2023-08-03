@@ -38,4 +38,16 @@ public class UserService {
 
         return productRepository.findByCategoryInAndNameNotIn(userCategories, userProductNames);
     }
+
+    public boolean updateCoupons(int coupons, String username) {
+
+        final User user = userRepository.findByCredentials_Username(username);
+        if(user != null){
+            userRepository.deleteUserByCredentials_Username(username);
+            user.setCoupons(coupons);
+            userRepository.save(user);
+            return true;
+        }
+        return false;
+    }
 }
