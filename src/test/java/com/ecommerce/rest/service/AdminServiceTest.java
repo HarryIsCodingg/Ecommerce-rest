@@ -30,8 +30,8 @@ public class AdminServiceTest {
 
     @Test
     public void testValidateAdminLogin() {
-        Admin admin = new Admin(); // Add your own initialization data
-        Credentials credentials = new Credentials(); // Add your own initialization data
+        Admin admin = new Admin();
+        Credentials credentials = new Credentials();
 
         // Initialization Data
         credentials.setUsername("harinder");
@@ -54,7 +54,7 @@ public class AdminServiceTest {
 
     @Test
     public void testValidateAdminLoginInvalidCredentials() {
-        Credentials invalidCredentials = new Credentials(); // Add your own initialization data
+        Credentials invalidCredentials = new Credentials();
 
         // Initialization Data
         invalidCredentials.setUsername("harinder");
@@ -72,6 +72,5 @@ public class AdminServiceTest {
         assertNotNull(result);
         // Assuming a new Admin() has null or default values for all its properties
         assertNull(result.getCredentials());
-        // ... Add assertions for other properties of Admin
     }
 }

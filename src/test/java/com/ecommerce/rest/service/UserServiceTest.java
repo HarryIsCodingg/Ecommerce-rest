@@ -40,8 +40,8 @@ public class UserServiceTest {
 
     @Test
     public void testValidateUserLogin() {
-        User user = new User(); // Add your own initialization data
-        Credentials credentials = new Credentials(); // Add your own initialization data
+        User user = new User();
+        Credentials credentials = new Credentials();
 
         // Initialization Data
         credentials.setUsername("harinder");
@@ -64,7 +64,7 @@ public class UserServiceTest {
 
     @Test
     public void testValidateUserLoginInvalidCredentials() {
-        Credentials invalidCredentials = new Credentials(); // Add your own initialization data
+        Credentials invalidCredentials = new Credentials();
 
         // Initialization Data
         invalidCredentials.setUsername("harinder");
@@ -82,14 +82,13 @@ public class UserServiceTest {
         assertNotNull(result);
         // Assuming a new User() has null or default values for all its properties
         assertNull(result.getCredentials());
-        // ... Add assertions for other properties of User
     }
 
     @Test
     public void testUpdateCoupons() {
         String username = "amitatest";
         int coupons = 5;
-        User user = new User(); // add your initialization data
+        User user = new User();
 
         // Initialization Data
         Credentials credentials = new Credentials();

@@ -32,8 +32,8 @@ public class ProductServiceTest {
 
     @Test
     public void testGetAllProducts() {
-        Product product1 = new Product(); // Add your own initialization data
-        Product product2 = new Product(); // Add your own initialization data
+        Product product1 = new Product();
+        Product product2 = new Product();
 
         // Initialization Data
         product1.setName("pear");
@@ -66,7 +66,7 @@ public class ProductServiceTest {
     @Test
     public void testDeleteProduct() {
         String productName = "havarti cheese";
-        Product product = new Product(); // Add your own initialization data
+        Product product = new Product();
 
         // Initialization Data
         product.setName(productName);
@@ -90,7 +90,7 @@ public class ProductServiceTest {
 
     @Test
     public void testSaveProduct() {
-        Product product = new Product(); // Add your own initialization data
+        Product product = new Product();
 
         // Initialization Data
         product.setName("capon");
@@ -114,7 +114,7 @@ public class ProductServiceTest {
     @Test
     public void testUpdateProduct() {
         String productToUpdate = "kobe";
-        Product updatedProduct = new Product(); // Add your own initialization data
+        Product updatedProduct = new Product();
 
         // Initialization Data
         updatedProduct.setName(productToUpdate);
