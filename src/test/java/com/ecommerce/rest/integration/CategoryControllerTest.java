@@ -1,4 +1,4 @@
-package com.ecommerce.rest.controller;
+package com.ecommerce.rest.integration;
 
 import com.ecommerce.rest.model.Category;
 import com.ecommerce.rest.service.CategoryService;
