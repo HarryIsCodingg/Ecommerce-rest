@@ -79,6 +79,25 @@ public class ProductControllerTest {
         assertTrue(isProductUpdated);
     }
 
+    @Test
+    public void Delete_Endpoint_Returns_ProductDeleted() throws Exception {
+
+        setup();
+        product.setQuantity("43");
+
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
+                        .post("/products/delete?productName=garlic")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andReturn();
+
+        Product productDeleted = mapper.readValue(mvcResult.getResponse().getContentAsString(), new TypeReference<>() {});
+
+        System.out.println(productDeleted);
+
+        assertEquals(productDeleted, product);
+    }
+
     private void setup(){
         product = new Product();
         product.setName("garlic");
