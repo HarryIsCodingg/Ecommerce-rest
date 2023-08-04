@@ -2,13 +2,11 @@ package com.ecommerce.rest.controller;
 
 import com.ecommerce.rest.model.Category;
 import com.ecommerce.rest.service.CategoryService;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -45,8 +43,6 @@ public class CategoryControllerTest {
 
         int actualResponseBody = mvcResult.getResponse().getStatus();
 
-        System.out.println("HTTP Status Code: " + actualResponseBody);
-
         assertEquals(actualResponseBody, 200);
 
     }
@@ -62,17 +58,12 @@ public class CategoryControllerTest {
         String actualResponseBody = mvcResult.getResponse().getContentAsString();
         String expectedResponseBody = objectMapper.writeValueAsString(categoryService.getAllCategories());
 
-        // Print
-        System.out.println(actualResponseBody);
-        System.out.println(expectedResponseBody);
-        // Print
-
         assertEquals(expectedResponseBody, actualResponseBody);
     }
 
     @Test
     public void testDeleteCategory() throws Exception {
-        String name = "pasta"; // Add your own initialization data
+        String name = "pasta";
 
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
                         .post("/category/delete")
@@ -83,11 +74,6 @@ public class CategoryControllerTest {
 
         String actualResponseBody = mvcResult.getResponse().getContentAsString();
         String expectedResponseBody = objectMapper.writeValueAsString(categoryService.deleteCategory(name));
-
-        // Print
-        System.out.println(actualResponseBody);
-        System.out.println(expectedResponseBody);
-        // Print
 
         assertEquals(expectedResponseBody, actualResponseBody);
     }
