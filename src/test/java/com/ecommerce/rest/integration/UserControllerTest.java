@@ -79,7 +79,6 @@ public class UserControllerTest {
 
         List<Product> listOfSuggestions = mapper.readValue(mvcResult.getResponse().getContentAsString(), new TypeReference<>() {});
 
-        listOfSuggestions.forEach(System.out::println);
         assertTrue(listOfSuggestions.size() > 0);
     }
 
