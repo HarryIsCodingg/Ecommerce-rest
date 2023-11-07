@@ -8,4 +8,3 @@ To test the api, use [Swagger](https://ecommerce-rest.onrender.com/swagger-ui/in
 
 ### Stack
 Springboot is used with mongodb as database. 
-![Uploading image.png…]()
